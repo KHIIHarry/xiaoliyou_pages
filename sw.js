@@ -1,4 +1,4 @@
-const version = 'xly-shell-v6';
+const version = 'xly-shell-v7';
 const files = ['index.html', 'main.js', 'apps-config.js', 'styles.css', 'manifest.webmanifest',
   ...['campus.svg','xly-icon.svg','print_logo.svg','delivery.svg','tools.svg','lost.svg','more.svg',
       'icon-192.png','icon-512.png','icon-maskable-512.png','apple-touch-icon.png'].map(name => 'icons/' + name)];
