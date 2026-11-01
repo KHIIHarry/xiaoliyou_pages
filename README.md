@@ -1,20 +1,20 @@
 # 校里有 XLY
 
-完整站点位于 public/。在项目目录运行以下命令，然后打开 http://localhost:8787/ 。
+完整站点位于项目根目录。在项目目录运行以下命令，然后打开 http://localhost:8787/ 。
 
 ```sh
-python3 -m http.server 8787 --directory public
+python3 -m http.server 8787
 ```
 
 ## 上线服务
 
-编辑 public/apps-config.js。复制一项并指定唯一 id，填写 name、description 和本地图标 icon。图标路径相对于 public/，自定义图标请放在 icons/。order 数值越小越靠前，visible 为 false 会隐藏入口。color 支持 peach、honey、mint、rose。
+编辑 apps-config.js。复制一项并指定唯一 id，填写 name、description 和本地图标 icon。图标路径相对于项目根目录，自定义图标请放在 icons/。order 数值越小越靠前，visible 为 false 会隐藏入口。color 支持 peach、honey、mint、rose。
 
 将业务方提供的完整 HTTP 或 HTTPS 地址原样填入 url，并将 enabled 设为 true。端口、路径和查询参数都可保留。未启用、地址为空或协议无效时，页面展示「即将上线」。浏览器报告离线时，已上线入口会显示「需联网」。englishName 配置中文标题下的英文名称，status 支持 launched 和 planned。当前宿舍打印已配置直达地址，其他入口点击后显示顶部轻提示。
 
 ## 部署至 Cloudflare Pages
 
-在 Workers & Pages 创建 Pages 项目，选择直接上传，拖入 public 文件夹并部署。确保上传目录的第一层就是 index.html。更新时在同一项目新建部署并再次上传整个目录。使用 Git 集成时选择无框架预设，构建命令留空，输出目录填 public。
+在 Workers & Pages 创建 Pages 项目，选择直接上传，拖入包含 index.html 的站点文件夹并部署。确保上传目录的第一层就是 index.html。更新时在同一项目新建部署并再次上传整个目录。使用 Git 集成时选择无框架预设，构建命令留空，输出目录填 .。
 
 [Cloudflare 直接上传文档](https://developers.cloudflare.com/pages/get-started/direct-upload/)
 
